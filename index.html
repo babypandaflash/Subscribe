@@ -6,11 +6,17 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+content="#ff0000">
+
+<meta name="description"
+content="Official Vanssskie Mobile Legends Creator">
 
 <title>Vanssskie | Mobile Legends</title>
 
-<meta name="theme-color" content="#ff0000">
+<!-- Google Font -->
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
@@ -19,8 +25,13 @@ href="https://fonts.googleapis.com">
 href="https://fonts.gstatic.com"
 crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
@@ -44,6 +55,7 @@ body{
 background:#070707;
 color:#fff;
 overflow-x:hidden;
+min-height:100vh;
 
 }
 
@@ -55,21 +67,21 @@ content:"";
 
 position:fixed;
 
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 
-left:-250px;
-top:-250px;
+left:-300px;
+top:-300px;
 
 background:#ff0000;
 
-filter:blur(220px);
+filter:blur(230px);
 
-opacity:.20;
+opacity:.22;
 
 z-index:-2;
 
-animation:bg1 8s infinite alternate;
+animation:bgLeft 10s infinite alternate ease-in-out;
 
 }
 
@@ -79,41 +91,41 @@ content:"";
 
 position:fixed;
 
-width:500px;
-height:500px;
+width:550px;
+height:550px;
 
 right:-220px;
 bottom:-220px;
 
-background:#ff2d55;
+background:#ff3b5c;
 
-filter:blur(180px);
+filter:blur(200px);
 
-opacity:.18;
+opacity:.20;
 
 z-index:-2;
 
-animation:bg2 8s infinite alternate;
+animation:bgRight 10s infinite alternate ease-in-out;
 
 }
 
-@keyframes bg1{
+@keyframes bgLeft{
 
 100%{
 
 transform:
-translate(150px,120px);
+translate(160px,120px);
 
 }
 
 }
 
-@keyframes bg2{
+@keyframes bgRight{
 
 100%{
 
 transform:
-translate(-120px,-80px);
+translate(-120px,-100px);
 
 }
 
@@ -124,7 +136,7 @@ translate(-120px,-80px);
 width:92%;
 max-width:430px;
 
-margin:40px auto;
+margin:45px auto;
 
 }
 
@@ -136,15 +148,15 @@ background:
 
 rgba(255,255,255,.05);
 
-backdrop-filter:
-
-blur(18px);
-
 border:
 
 1px solid rgba(255,255,255,.08);
 
-border-radius:25px;
+backdrop-filter:
+
+blur(18px);
+
+border-radius:28px;
 
 padding:35px 25px;
 
@@ -152,7 +164,21 @@ text-align:center;
 
 box-shadow:
 
-0 0 40px rgba(255,0,0,.25);
+0 0 45px rgba(255,0,0,.25);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:
+
+translateY(-4px);
+
+box-shadow:
+
+0 0 65px rgba(255,0,0,.35);
 
 }
 
@@ -160,22 +186,25 @@ box-shadow:
 
 .profile{
 
-width:140px;
-height:140px;
+width:145px;
+height:145px;
 
 margin:auto;
 
-border-radius:50%;
-
 padding:5px;
+
+border-radius:50%;
 
 background:
 
-linear-gradient(45deg,#ff0000,#ff5f5f);
+linear-gradient(
+45deg,
+#ff0000,
+#ff6868);
 
 animation:
 
-glow 3s infinite alternate;
+profileGlow 3s infinite alternate;
 
 }
 
@@ -190,13 +219,14 @@ object-fit:cover;
 
 }
 
-@keyframes glow{
+@keyframes profileGlow{
 
 100%{
 
 box-shadow:
 
-0 0 35px red;
+0 0 35px red,
+0 0 60px rgba(255,0,0,.4);
 
 }
 
@@ -206,9 +236,11 @@ h1{
 
 margin-top:20px;
 
-font-size:32px;
+font-size:34px;
 
 font-weight:700;
+
+letter-spacing:1px;
 
 }
 
@@ -216,7 +248,7 @@ font-weight:700;
 
 margin-top:8px;
 
-color:#ff6666;
+color:#ff6b6b;
 
 font-size:15px;
 
@@ -226,15 +258,13 @@ font-size:15px;
 
 margin-top:18px;
 
-line-height:25px;
+line-height:26px;
 
 font-size:14px;
 
 color:#ddd;
 
 }
-
-/* Subscribe */
 
 .subscribe{
 
@@ -246,8 +276,6 @@ justify-content:center;
 
 }
 
-/* Social */
-
 .social{
 
 margin-top:28px;
@@ -258,28 +286,67 @@ gap:15px;
 
 }
 
-.btn{
+/*==========================
+ BUTTON
+==========================*/
 
-height:58px;
+.btn{
 
 display:flex;
 
-justify-content:center;
 align-items:center;
 
-border-radius:16px;
+justify-content:center;
+
+gap:12px;
+
+width:100%;
+
+height:60px;
+
+border-radius:18px;
 
 text-decoration:none;
 
+color:#fff;
+
+font-size:17px;
+
 font-weight:600;
-
-color:white;
-
-transition:.35s;
 
 position:relative;
 
 overflow:hidden;
+
+transition:.35s;
+
+box-shadow:
+
+0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.btn i{
+
+font-size:24px;
+
+transition:.35s;
+
+}
+
+.btn:hover{
+
+transform:
+
+translateY(-4px) scale(1.02);
+
+}
+
+.btn:hover i{
+
+transform:
+
+rotate(8deg) scale(1.2);
 
 }
 
@@ -289,37 +356,55 @@ content:"";
 
 position:absolute;
 
-width:0;
+top:0;
+
+left:-140%;
+
+width:70%;
 
 height:100%;
 
 background:
 
-rgba(255,255,255,.18);
+linear-gradient(
 
-left:-50%;
+90deg,
+
+transparent,
+
+rgba(255,255,255,.30),
+
+transparent
+
+);
 
 transform:skewX(-25deg);
 
-transition:.6s;
+transition:.8s;
 
 }
 
 .btn:hover::before{
 
-width:220%;
+left:180%;
 
 }
 
-.btn:hover{
-
-transform:scale(1.03);
-
-}
+/*==========================
+ BUTTON COLOR
+==========================*/
 
 .youtube{
 
 background:#ff0000;
+
+}
+
+.youtube:hover{
+
+box-shadow:
+
+0 0 25px #ff0000;
 
 }
 
@@ -331,21 +416,53 @@ border:1px solid #333;
 
 }
 
+.tiktok:hover{
+
+box-shadow:
+
+0 0 25px #25F4EE;
+
+}
+
 .instagram{
 
 background:
 
 linear-gradient(
+
 45deg,
-#833ab4,
-#fd1d1d,
-#fcb045);
+
+#833AB4,
+
+#FD1D1D,
+
+#FCAF45
+
+);
+
+}
+
+.instagram:hover{
+
+box-shadow:
+
+0 0 25px #E1306C;
 
 }
 
 .twitter{
 
 background:#000;
+
+border:1px solid #444;
+
+}
+
+.twitter:hover{
+
+box-shadow:
+
+0 0 25px #ffffff55;
 
 }
 
@@ -355,36 +472,57 @@ background:#16a34a;
 
 }
 
-footer{
+.donate:hover{
 
-margin-top:30px;
+box-shadow:
 
-font-size:13px;
-
-color:#999;
+0 0 25px #16a34a;
 
 }
 
-/* Loader */
+/*==========================
+ FOOTER
+==========================*/
+
+footer{
+
+margin-top:35px;
+
+font-size:13px;
+
+line-height:24px;
+
+color:#999;
+
+text-align:center;
+
+}
+
+/*==========================
+ LOADER
+==========================*/
 
 .loader{
 
 position:fixed;
 
 top:0;
+
 left:0;
 
 width:100%;
+
 height:100%;
 
-background:#000;
+background:#050505;
 
 display:flex;
 
 justify-content:center;
+
 align-items:center;
 
-z-index:9999;
+z-index:99999;
 
 transition:.5s;
 
@@ -392,17 +530,21 @@ transition:.5s;
 
 .loader div{
 
-width:70px;
-height:70px;
+width:75px;
+
+height:75px;
 
 border-radius:50%;
 
 border:6px solid
+
 rgba(255,255,255,.15);
 
-border-top-color:red;
+border-top:6px solid red;
 
-animation:spin 1s linear infinite;
+animation:
+
+spin 1s linear infinite;
 
 }
 
@@ -416,6 +558,86 @@ transform:rotate(360deg);
 
 }
 
+/*==========================
+ RIPPLE
+==========================*/
+
+@keyframes ripple{
+
+0%{
+
+transform:scale(0);
+
+opacity:.7;
+
+}
+
+100%{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+/*==========================
+ RESPONSIVE
+==========================*/
+
+@media(max-width:480px){
+
+.container{
+
+width:94%;
+
+}
+
+.card{
+
+padding:28px 18px;
+
+}
+
+.profile{
+
+width:120px;
+
+height:120px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+.bio{
+
+font-size:13px;
+
+line-height:23px;
+
+}
+
+.btn{
+
+height:54px;
+
+font-size:15px;
+
+}
+
+.btn i{
+
+font-size:21px;
+
+}
+
+}
+
 </style>
 
 </head>
@@ -423,20 +645,23 @@ transform:rotate(360deg);
 <body>
 
 <div class="loader">
-
-<div></div>
-
+    <div></div>
 </div>
 
 <div class="container">
 
 <div class="card">
 
+<!-- Profile -->
+
 <div class="profile">
 
-<img src="https://raw.githubusercontent.com/babypandaflash/Subscribe/refs/heads/main/vanssskie.png">
+<img src="https://raw.githubusercontent.com/babypandaflash/Subscribe/refs/heads/main/vanssskie.png"
+alt="Vanssskie">
 
 </div>
+
+<!-- Name -->
 
 <h1>Vanssskie</h1>
 
@@ -446,13 +671,36 @@ transform:rotate(360deg);
 
 </div>
 
+<!-- Bio -->
+
 <div class="bio">
 
-Selamat datang di channel Vanssskie! 🎮
-Gameplay Mobile Legends, Push Rank,
-Build Hero, Tips, dan Real Gameplay.
-Terima kasih telah berkunjung. Dukung channel ini dengan subscribe, follow, bagikan, dan donasi agar saya terus berkarya! ❤️ Ayo
+Selamat datang di channel <b>Vanssskie</b>! 🎮
+
+<br><br>
+
+Channel ini berisi gameplay Mobile Legends,
+Push Rank Mythic, Build Hero, Tips & Trick,
+Highlight Match, dan Real Gameplay tanpa edit
+berlebihan.
+
+<br><br>
+
+Terima kasih telah berkunjung ❤️
+
+Dukung channel ini dengan
+<b>Subscribe</b>,
+<b>Follow</b>,
+<b>Like</b>,
+<b>Comment</b>,
+<b>Share</b>,
+dan <b>Donate</b>
+agar saya terus menghadirkan
+konten Mobile Legends terbaik.
+
 </div>
+
+<!-- Google Subscribe -->
 
 <div class="subscribe">
 
@@ -470,47 +718,67 @@ data-count="hidden">
 
 </div>
 
-<!-- PART 2 -->
+<!-- Social Button -->
 
 <div class="social">
 
 <a href="https://www.youtube.com/channel/UCLc-kF8BqfvrWcRQZ_NJI2g?sub_confirmation=1"
+
 class="btn youtube"
+
 target="_blank">
 
-▶ YouTube
+<i class="fa-brands fa-youtube"></i>
+
+<span>YouTube</span>
 
 </a>
 
 <a href="https://www.tiktok.com/@vanssskie"
+
 class="btn tiktok"
+
 target="_blank">
 
-🎵 TikTok
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
 
 </a>
 
 <a href="https://www.instagram.com/vanssskie_yt"
+
 class="btn instagram"
+
 target="_blank">
 
-📷 Instagram
+<i class="fa-brands fa-instagram"></i>
+
+<span>Instagram</span>
 
 </a>
 
 <a href="https://x.com/Vanssskie_YT"
+
 class="btn twitter"
+
 target="_blank">
 
-𝕏 X (Twitter)
+<i class="fa-brands fa-x-twitter"></i>
+
+<span>X (Twitter)</span>
 
 </a>
 
 <a href="https://sociabuzz.com/vanssskie/tribe"
+
 class="btn donate"
+
 target="_blank">
 
-💚 Donate
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+<span>Donate</span>
 
 </a>
 
@@ -518,11 +786,11 @@ target="_blank">
 
 <footer>
 
-© 2026 Vanssskie
+© 2026 <b>Vanssskie</b>
 
 <br><br>
 
-Terima kasih telah mendukung channel ini ❤️
+Made with ❤️ for Mobile Legends Players
 
 </footer>
 
@@ -530,33 +798,218 @@ Terima kasih telah mendukung channel ini ❤️
 
 </div>
 
+<!-- Part 2B -->
+
+<!-- Background Particles -->
+<canvas id="particles"></canvas>
+
+<style>
+
+/*==========================
+ PARTICLES
+==========================*/
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:-3;
+
+}
+
+/*==========================
+ CARD ANIMATION
+==========================*/
+
+.card{
+
+opacity:0;
+
+transform:translateY(40px);
+
+animation:
+
+cardShow .9s ease forwards;
+
+animation-delay:.6s;
+
+}
+
+@keyframes cardShow{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==========================
+ FLOAT PROFILE
+==========================*/
+
+.profile{
+
+animation:
+
+profileGlow 3s infinite alternate,
+
+floatProfile 4s ease-in-out infinite;
+
+}
+
+@keyframes floatProfile{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/*==========================
+ TITLE EFFECT
+==========================*/
+
+h1{
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#ffffff,
+
+#ff4444,
+
+#ffffff
+
+);
+
+background-size:200%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:titleMove 5s linear infinite;
+
+}
+
+@keyframes titleMove{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:200%;
+
+}
+
+}
+
+/*==========================
+ SOCIAL HOVER
+==========================*/
+
+.social .btn{
+
+transform-origin:center;
+
+}
+
+.social .btn:active{
+
+transform:scale(.96);
+
+}
+
+/*==========================
+ FOOTER EFFECT
+==========================*/
+
+footer{
+
+opacity:.85;
+
+transition:.3s;
+
+}
+
+footer:hover{
+
+opacity:1;
+
+color:#ffffff;
+
+}
+
+</style>
+
+<!-- Part 3 -->
+
+<!-- Google YouTube API -->
 <script src="https://apis.google.com/js/platform.js"></script>
 
 <script>
 
-/*====================
- LOADER
-====================*/
+/* ==========================
+   Loader
+========================== */
 
 window.addEventListener("load",function(){
 
 setTimeout(function(){
 
-document.querySelector(".loader").style.opacity="0";
+const loader=document.querySelector(".loader");
+
+loader.style.opacity="0";
+loader.style.visibility="hidden";
 
 setTimeout(function(){
 
-document.querySelector(".loader").style.display="none";
+loader.style.display="none";
 
 },500);
 
-},1000);
+},900);
 
 });
 
-/*====================
- RIPPLE EFFECT
-====================*/
+/* ==========================
+   Ripple Effect
+========================== */
 
 document.querySelectorAll(".btn").forEach(function(btn){
 
@@ -593,43 +1046,122 @@ ripple.remove();
 
 });
 
-/*====================
- TITLE ANIMATION
-====================*/
+/* ==========================
+   Browser Title
+========================== */
 
-let text="🎮 Vanssskie | Mobile Legends";
-let pos=0;
+const titleText="🎮 Vanssskie | Mobile Legends";
+
+let titleIndex=0;
 
 setInterval(function(){
 
-document.title=text.substring(0,pos);
+document.title=titleText.substring(0,titleIndex);
 
-pos++;
+titleIndex++;
 
-if(pos>text.length){
+if(titleIndex>titleText.length){
 
-pos=0;
+titleIndex=0;
 
 }
 
 },180);
 
+/* ==========================
+   Canvas Particles
+========================== */
+
+const canvas=document.getElementById("particles");
+
+const ctx=canvas.getContext("2d");
+
+function resizeCanvas(){
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener("resize",resizeCanvas);
+
+const particles=[];
+
+for(let i=0;i<80;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+r:Math.random()*2+1,
+
+dx:(Math.random()-0.5)*0.5,
+
+dy:(Math.random()-0.5)*0.5
+
+});
+
+}
+
+function animateParticles(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(function(p){
+
+ctx.beginPath();
+
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+ctx.fillStyle="rgba(255,0,0,.8)";
+
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+});
+
+requestAnimationFrame(animateParticles);
+
+}
+
+animateParticles();
+
+/* ==========================
+   Card Tilt Effect
+========================== */
+
+const card=document.querySelector(".card");
+
+document.addEventListener("mousemove",function(e){
+
+const x=(window.innerWidth/2-e.clientX)/35;
+
+const y=(window.innerHeight/2-e.clientY)/35;
+
+card.style.transform=
+
+"rotateY("+x+"deg) rotateX("+(-y)+"deg)";
+
+});
+
+document.addEventListener("mouseleave",function(){
+
+card.style.transform=
+
+"rotateY(0deg) rotateX(0deg)";
+
+});
+
 </script>
-
-<style>
-
-@keyframes ripple{
-
-to{
-
-transform:scale(4);
-opacity:0;
-
-}
-
-}
-
-</style>
 
 </body>
 
