@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Vanssskie | Mobile Legends</title>
+
+<meta name="theme-color" content="#ff0000">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:#070707;
+color:#fff;
+overflow-x:hidden;
+
+}
+
+/* Background */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+left:-250px;
+top:-250px;
+
+background:#ff0000;
+
+filter:blur(220px);
+
+opacity:.20;
+
+z-index:-2;
+
+animation:bg1 8s infinite alternate;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+right:-220px;
+bottom:-220px;
+
+background:#ff2d55;
+
+filter:blur(180px);
+
+opacity:.18;
+
+z-index:-2;
+
+animation:bg2 8s infinite alternate;
+
+}
+
+@keyframes bg1{
+
+100%{
+
+transform:
+translate(150px,120px);
+
+}
+
+}
+
+@keyframes bg2{
+
+100%{
+
+transform:
+translate(-120px,-80px);
+
+}
+
+}
+
+.container{
+
+width:92%;
+max-width:430px;
+
+margin:40px auto;
+
+}
+
+/* Card */
+
+.card{
+
+background:
+
+rgba(255,255,255,.05);
+
+backdrop-filter:
+
+blur(18px);
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+border-radius:25px;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow:
+
+0 0 40px rgba(255,0,0,.25);
+
+}
+
+/* Profile */
+
+.profile{
+
+width:140px;
+height:140px;
+
+margin:auto;
+
+border-radius:50%;
+
+padding:5px;
+
+background:
+
+linear-gradient(45deg,#ff0000,#ff5f5f);
+
+animation:
+
+glow 3s infinite alternate;
+
+}
+
+.profile img{
+
+width:100%;
+height:100%;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+@keyframes glow{
+
+100%{
+
+box-shadow:
+
+0 0 35px red;
+
+}
+
+}
+
+h1{
+
+margin-top:20px;
+
+font-size:32px;
+
+font-weight:700;
+
+}
+
+.creator{
+
+margin-top:8px;
+
+color:#ff6666;
+
+font-size:15px;
+
+}
+
+.bio{
+
+margin-top:18px;
+
+line-height:25px;
+
+font-size:14px;
+
+color:#ddd;
+
+}
+
+/* Subscribe */
+
+.subscribe{
+
+margin-top:25px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+/* Social */
+
+.social{
+
+margin-top:28px;
+
+display:grid;
+
+gap:15px;
+
+}
+
+.btn{
+
+height:58px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:white;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.18);
+
+left:-50%;
+
+transform:skewX(-25deg);
+
+transition:.6s;
+
+}
+
+.btn:hover::before{
+
+width:220%;
+
+}
+
+.btn:hover{
+
+transform:scale(1.03);
+
+}
+
+.youtube{
+
+background:#ff0000;
+
+}
+
+.tiktok{
+
+background:#111;
+
+border:1px solid #333;
+
+}
+
+.instagram{
+
+background:
+
+linear-gradient(
+45deg,
+#833ab4,
+#fd1d1d,
+#fcb045);
+
+}
+
+.twitter{
+
+background:#000;
+
+}
+
+.donate{
+
+background:#16a34a;
+
+}
+
+footer{
+
+margin-top:30px;
+
+font-size:13px;
+
+color:#999;
+
+}
+
+/* Loader */
+
+.loader{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:#000;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+transition:.5s;
+
+}
+
+.loader div{
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+border:6px solid
+rgba(255,255,255,.15);
+
+border-top-color:red;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="loader">
+
+<div></div>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="profile">
+
+<img src="https://i.imgur.com/qJQXK6Q.png">
+
+</div>
+
+<h1>Vanssskie</h1>
+
+<div class="creator">
+
+🎮 Mobile Legends Creator
+
+</div>
+
+<div class="bio">
+
+Selamat datang di channel Vanssskie.
+
+Gameplay Mobile Legends, Push Rank,
+Build Hero, Tips, dan Real Gameplay.
+
+</div>
+
+<div class="subscribe">
+
+<div class="g-ytsubscribe"
+
+data-channelid="UCLc-kF8BqfvrWcRQZ_NJI2g"
+
+data-layout="full"
+
+data-theme="dark"
+
+data-count="hidden">
+
+</div>
+
+</div>
+
+<!-- PART 2 -->
+
+<div class="social">
+
+<a href="https://www.youtube.com/channel/UCLc-kF8BqfvrWcRQZ_NJI2g?sub_confirmation=1"
+class="btn youtube"
+target="_blank">
+
+▶ YouTube
+
+</a>
+
+<a href="https://tiktok.com/@vanssskie"
+class="btn tiktok"
+target="_blank">
+
+🎵 TikTok
+
+</a>
+
+<a href="https://instagram.com/vanssskie"
+class="btn instagram"
+target="_blank">
+
+📷 Instagram
+
+</a>
+
+<a href="https://x.com/vanssskie"
+class="btn twitter"
+target="_blank">
+
+𝕏 X (Twitter)
+
+</a>
+
+<a href="https://sociabuzz.com/"
+class="btn donate"
+target="_blank">
+
+💚 Donate
+
+</a>
+
+</div>
+
+<footer>
+
+© 2026 Vanssskie
+
+<br><br>
+
+Terima kasih telah mendukung channel ini ❤️
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<script>
+
+/*====================
+ LOADER
+====================*/
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document.querySelector(".loader").style.opacity="0";
+
+setTimeout(function(){
+
+document.querySelector(".loader").style.display="none";
+
+},500);
+
+},1000);
+
+});
+
+/*====================
+ RIPPLE EFFECT
+====================*/
+
+document.querySelectorAll(".btn").forEach(function(btn){
+
+btn.addEventListener("click",function(e){
+
+const ripple=document.createElement("span");
+
+const rect=this.getBoundingClientRect();
+
+const size=Math.max(rect.width,rect.height);
+
+ripple.style.width=size+"px";
+ripple.style.height=size+"px";
+
+ripple.style.left=(e.clientX-rect.left-size/2)+"px";
+ripple.style.top=(e.clientY-rect.top-size/2)+"px";
+
+ripple.style.position="absolute";
+ripple.style.borderRadius="50%";
+ripple.style.background="rgba(255,255,255,.35)";
+ripple.style.transform="scale(0)";
+ripple.style.animation="ripple .6s linear";
+ripple.style.pointerEvents="none";
+
+this.appendChild(ripple);
+
+setTimeout(function(){
+
+ripple.remove();
+
+},600);
+
+});
+
+});
+
+/*====================
+ TITLE ANIMATION
+====================*/
+
+let text="🎮 Vanssskie | Mobile Legends";
+let pos=0;
+
+setInterval(function(){
+
+document.title=text.substring(0,pos);
+
+pos++;
+
+if(pos>text.length){
+
+pos=0;
+
+}
+
+},180);
+
+</script>
+
+<style>
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</body>
+
+</html>
